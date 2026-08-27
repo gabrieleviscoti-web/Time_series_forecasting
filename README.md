@@ -5,7 +5,7 @@ This project performs time series forecasting on monthly sales data using two mo
 
 - Prophet
 
-The workflow includes data loading, resampling, decomposition, autocorrelation analysis, model training, forecasting, evaluation, and model comparison.
+The workflow includes data loading, resampling, decomposition, autocorrelation analysis, model training, forecasting, evaluation and model comparison.
 
 ## Project Objective
 Forecast monthly sales using classical statistical models and modern additive models.
@@ -29,7 +29,7 @@ The project demonstrates skills in:
 The dataset is loaded from a CSV file containing Superstore sales data:
 
 ```python
-df = pd.read_csv("Sample - Superstore.csv", parse_dates=["Order Date"], encoding="latin1")
+df = pd.read_csv("Sample - Superstore.csv", parse_dates=["Order Date"], encoding="latin1") #insert the adress for the file .csv in the first part of the command
 
 ```
 ## Monthly resampling:
@@ -41,7 +41,7 @@ ts = ts.asfreq("ME")
 ## Time Series Visualization
 ```python
 plt.figure(figsize=(12,5))
-plt.plot(ts, label="Sales mensili")
+plt.plot(ts, label="Sales per month")
 plt.title("Sales per month")
 plt.xlabel("Year")
 plt.ylabel("Sales")
@@ -155,9 +155,9 @@ print("ARIMA - MAE:", mae_arima, "RMSE:", rmse_arima)
 print("Prophet - MAE:", mae_prophet, "RMSE:", rmse_prophet)
 
 if rmse_prophet < rmse_arima:
-    print("Il modello migliore è: PROPHET")
+    print("The best model is: PROPHET")
 else:
-    print("Il modello migliore è: ARIMA")
+    print("The best model is: ARIMA")
 ```
 ## Key Results
 - STL decomposition reveals clear trend and seasonality.
